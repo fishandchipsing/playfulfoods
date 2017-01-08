@@ -4,6 +4,7 @@
   "description": "example app for kids",
   "main": "server.js",
   "dependencies": {
+    "@google-cloud/vision": "^0.7.0",
     "express": "^4.14.0",
     "face-plus-plus": "^0.0.3",
     "freesound": "^0.0.4",
