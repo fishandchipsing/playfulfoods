@@ -1,47 +1,47 @@
 var express = require('express');
 var multer = require('multer');
 var fs = require('fs');
-
+// var limdu = require('limdu');
 var vision = require('@google-cloud/vision')({
     projectId: 'image-to-recipe',
     keyFilename: 'auth/Image_to_recipe_f07606bd92d1.json'
 });
 
 var request = require("request");
-var limdu = require('limdu');
+
 
 var app = express();
 var server = app.listen(3000);
 app.use(express.static('public'));
 
 
-// First, define our base classifier type (a multi-label classifier based on winnow):
-var TextClassifier = limdu.classifiers.multilabel.BinaryRelevance.bind(0, {
-    binaryClassifierType: limdu.classifiers.Winnow.bind(0, {retrain_count: 10})
-});
-
-// Now define our feature extractor - a function that takes a sample and adds features to a given features set:
-var WordExtractor = function(input, features) {
-    input.split(" ").forEach(function(word) {
-        features[word]=1;
-    });
-};
-
-// Initialize a classifier with the base classifier type and the feature extractor:
-var intentClassifier = new limdu.classifiers.EnhancedClassifier({
-    classifierType: TextClassifier,
-    featureExtractor: WordExtractor
-});
-
-// Train and test:
-intentClassifier.trainBatch([
-    {input: "meat", output: "cow"},
-    {input: "hamburger", output: "cow"},
-    {input: "sausage", output: "cow"},
-    {input: "hand", output: "cow"},
-    {input: "arm", output: "cow"},
-    {input: "banana", output:  "monkey"},
-    ]);
+// // First, define our base classifier type (a multi-label classifier based on winnow):
+// var TextClassifier = limdu.classifiers.multilabel.BinaryRelevance.bind(0, {
+//     binaryClassifierType: limdu.classifiers.Winnow.bind(0, {retrain_count: 10})
+// });
+//
+// // Now define our feature extractor - a function that takes a sample and adds features to a given features set:
+// var WordExtractor = function(input, features) {
+//     input.split(" ").forEach(function(word) {
+//         features[word]=1;
+//     });
+// };
+//
+// // Initialize a classifier with the base classifier type and the feature extractor:
+// var intentClassifier = new limdu.classifiers.EnhancedClassifier({
+//     classifierType: TextClassifier,
+//     featureExtractor: WordExtractor
+// });
+//
+// // Train and test:
+// intentClassifier.trainBatch([
+//     {input: "meat", output: "cow"},
+//     {input: "hamburger", output: "cow"},
+//     {input: "sausage", output: "cow"},
+//     {input: "hand", output: "cow"},
+//     {input: "arm", output: "cow"},
+//     {input: "banana", output:  "monkey"},
+//     ]);
 
 //console.dir(intentClassifier.classify("meat"));  // ['apl','bnn']
 
@@ -189,10 +189,10 @@ app.post('/api/photo', function(req, res) {
             console.log(err);
         } else {
             readFood(function(label) {
-                var interpret=intentClassifier.classify(label)[0];
+                // var interpret=intentClassifier.classify(label)[0];
                 console.log("what you see is ",label);
-                console.log("what i understand is ",interpret);
-                getId(interpret, function(soundId) {
+                console.log("what i understand is ",label);
+                getId(label, function(soundId) {
                     console.log("the id is ",soundId);
                     getSound(soundId, function(soundPrev) {
                         console.log("Here you can hear the sound", soundPrev);
