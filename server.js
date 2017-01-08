@@ -168,7 +168,7 @@ var getSound = function(id, callback) {
 
     var options = {
         method: 'GET',
-        url: 'http://www.freesound.org/apiv2/sounds/' + id + '/',
+        url: 'https://www.freesound.org/apiv2/sounds/' + id + '/',
         headers: {
             'postman-token': '8276026c-6f2c-b0b4-fe22-6e94449c3801',
             'cache-control': 'no-cache',
