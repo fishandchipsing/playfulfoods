@@ -1,0 +1,8 @@
+{
+  "name": "Playful Foods",
+  "description": "An exploration of computervision and food for playful experiences",
+  "repository": "https://github.com/heroku/node-js-getting-started",
+  "logo": "http://node-js-sample.herokuapp.com/node.svg",
+  "keywords": ["node", "express", "static"],
+  "image": "heroku/nodejs"
+}

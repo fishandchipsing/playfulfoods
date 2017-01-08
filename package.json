@@ -1,0 +1,21 @@
+{
+  "name": "noise_pic",
+  "version": "1.0.0",
+  "description": "example app for kids",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.14.0",
+    "face-plus-plus": "^0.0.3",
+    "freesound": "^0.0.4",
+    "limdu": "^0.8.0",
+    "multer": "^1.2.0",
+    "natural": "^0.4.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \\\"Error: no test specified\\\" && exit 1\"",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,71 @@
+body, h1, h2, h3{
+  font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+
+  color: black;
+  background: #222;
+}
+
+#thing{
+  color: white;
+  background-color: yellow;
+}
+
+#container{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+
+#mycamera{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -100;
+    opacity: 0.6;
+}
+
+
+#textIntro{
+  width: 200;
+  margin: auto;
+  background-color: rgba(0,0,0,0.5);
+}
+
+#filter{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 0;
+}
+
+#intro{
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  top: 50;
+  z-index: 9999:
+}
+
+form {
+    width: 100%;
+    margin: 0 auto;
+}
+
+#buttons{
+  position: absolute;
+  text-align: center;
+  bottom: 50;
+  z-index: 9999:
+}
+
+#inputs{
+  position: absolute;
+  text-align: center;
+  bottom: 20;
+  z-index: 9999:
+}

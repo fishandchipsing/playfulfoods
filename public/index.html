@@ -1,0 +1,48 @@
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Interpreter</title>
+
+    <!-- First, include the Webcam.js JavaScript Library -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="webcam.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+  <div id="container">
+    <!-- <div id="filter"></div> -->
+    <div id="my_camera"> </div>
+    <div id="intro">
+      <p id="textIntro">Let's explore!<p>
+    </div>
+    <form id="buttons">
+        <input type=button value="Take Snapshot" onClick="take_snapshot()" >
+    </form>
+    <form method="post" enctype="multipart/form-data" action="/api/photo" id="inputs">
+      <input type="file" name="userPhoto" accept="image/*" multiple="multiple">
+      </input>
+      <input type="button" value="Analyze" onClick="getUpload()"></input>
+    </form>
+
+  </div>
+    <!-- See live feed -->
+
+
+    <!-- to show the snapshot -->
+    <div id="results"></div>
+
+    <!-- A button for taking snaps -->
+
+
+    <!-- Add form for upload -->
+
+
+    <script type="text/javascript" src="sketch.js"></script>
+
+</body>
+
+</html>
